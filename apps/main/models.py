@@ -1,11 +1,11 @@
 from django.db import models
 
 dept_choices = [
-    ('CSE', 'Computer Science and Engineering'),
-    ('ECE', 'Electronics and Communication Engineering'),
-    ('EEE', 'Electrical and Electronic Engineering'),
-    ('Mech', 'Mechanical Engineering'),
-    ('Civil', 'Civil Engineering')
+    ('Computer Science and Engineering','CSE'),
+    ('Electronics and Communication Engineering','ECE'),
+    ('Electrical and Electronic Engineering','EEE'),
+    ('Mechanical Engineering','Mech'),
+    ('Civil Engineering','Civil')
 ]
 
 
@@ -25,11 +25,17 @@ class Student(models.Model):
     father_phone = models.IntegerField()
     mother_phone = models.IntegerField()
 
+    def __str__(self):
+        return self.name
+
 
 class Staff(models.Model):
     name = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
-    age = models.IntegerField()
+    age = models.IntegerField(null=True)
     DOB = models.DateField(null=True)
-    phone = models.IntegerField()
+    phone = models.IntegerField(null=True)
     department = models.CharField(max_length=200, choices=dept_choices)
+
+    def __str__(self):
+        return self.name
