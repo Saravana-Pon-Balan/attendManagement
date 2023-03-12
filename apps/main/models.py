@@ -42,14 +42,7 @@ class Staff(models.Model):
 
 
 class Department(models.Model):
-    choice = [
-        ("CSE","CSE"),
-        ("ECE","ECE"),
-        ("EEE","EEE"),
-        ("MECH","MECH"),
-        ("CIVIL","CIVIL")
-    ]
-    name = models.CharField(max_length=50,choices=choice)
+    name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
