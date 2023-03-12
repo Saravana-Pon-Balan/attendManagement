@@ -10,8 +10,8 @@ def timetable(request):
     context = {'departments': departments}
     if request.method == 'POST':
         context['values'] = True
-        department_id = request.POST.get('department')
-        year = request.POST.get('year')
+        department_id = int(request.POST.get('department'))
+        year = int(request.POST.get('year'))
         timetable = TimeTable.objects.filter(department_id=department_id, year=year)
         context['timetable'] = timetable
     return render(request, 'time_table.html', context)

@@ -36,7 +36,7 @@
 		{% if values %}
 		{% if timetable%}
 
-		<div class="d-flex justify-content-center align-items-center text-center p-2"><h3 class="rounded text-center bg-light d-inline-block"><b>Time Table For {{departments.id}} CSE</b></h3></div>
+		<div class="d-flex justify-content-center align-items-center text-center p-2"><h3 class="rounded text-center bg-light d-inline-block"><b>Time Table For {{timetable.year_id}} {{timetable.department.name}}</b></h3></div>
 		<div  class="bg-light">
 			<table class="table table-striped table-bordered">
 				<thead>
@@ -114,7 +114,7 @@
 				</div>
 		</div>
 		{%else%}
-		<h4>TimeTable did not created</h4>
+		<h4 class="alert text-white ">TimeTable did not created</h4>
 		{%endif%}
 		{% else %}
 		<h4  class="alert text-white ">Fill the Fields</h4>
