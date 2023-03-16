@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Student, Staff
+from .models import Student, Staff,TimeTable,Subject
 from import_export import resources, fields
 from import_export.admin import ImportExportModelAdmin
 from import_export.widgets import Widget
@@ -55,3 +55,6 @@ class StaffAdmin(ImportExportModelAdmin):
 
 admin.site.register(Student)
 admin.site.register(Staff, StaffAdmin)
+admin.site.register(TimeTable)
+admin.site.register(Subject)
+
