@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Attendance</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body class="bg-dark">
+	<div class="container">
+		<div class="nav d-flex">
+			<div class="dept d-flex p-5">
+				<h4 class="text-light pr-3">Department</h4>
+				<select>
+					<option>CSE</option>
+					<option>ECE</option>
+					<option>EEE</option>
+					<option>MECH</option>
+					<option>Civil</option>
+
+				</select>
+			</div>
+			<div class="year d-flex p-5">
+				<h4 class="text-light pr-3">Year</h4>
+				<select>
+					<option>First</option>
+					<option>Second</option>
+					<option>Third</option>
+					<option>Fourth</option>
+				</select>
+			</div>
+			<div class="sem d-flex p-5">
+				<h4 class="text-light pr-3">Semester</h4>
+				<select>
+					<option>Odd</option>
+					<option>Even</option>
+				</select>
+			</div>
+		</div>
+		<div class="content">
+			<table class="table bg-light">
+				<thead>
+					<th>Name</th>
+					<th>Period 1</th>
+					<th>Period 2</th>
+					<th>Period 3</th>
+					<th>Period 4</th>
+					<th>Period 5</th>
+					<th>Period 6</th>
+					<th>Period 7</th>
+					<th>Period 8</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Me</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="checkbox" checked onchange="checking(this)">Presented <textarea id="msg" style="display:none"></textarea> </td>
+
+					</tr>
+					<tr>
+						<td>Me</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="checkbox" checked onchange="checking(this)">Presented <textarea id="msg" style="display:none"></textarea> </td>
+
+					</tr><tr>
+						<td>Me</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
+						<td><input type="checkbox" checked onchange="checking(this)">Presented <textarea id="msg" style="display:none"></textarea> </td>
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+const table = document.querySelector('table');
+
+const rows = table.querySelectorAll('tr');
+rows.forEach((row, index) => {
+const tds = row.querySelectorAll('td');
+
+	tds.forEach((td,indextd)=>{
+  		const name = `p${index}${indextd}`;
+
+	
+
+  const radioButtons = td.querySelectorAll('input[type="radio"]');
+
+  radioButtons.forEach(radioButton => {
+    radioButton.name = name;
+	});	
+  });
+});
+
+	function checking(that){
+		var textarea = document.getElementById("msg")
+		if(!that.checked){
+			textarea.style.display="block";
+		}
+		else{
+			textarea.style.display="none";
+
+		}
+	}
+</script>
+</html>
