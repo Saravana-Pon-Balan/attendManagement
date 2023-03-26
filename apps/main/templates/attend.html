@@ -10,7 +10,7 @@
 <body class="bg-dark">
 	<div class="container">
 		<div class="nav d-flex">
-			<div class="dept d-flex p-5">
+			<div class="dept d-flex p-2 pt-5 pb-5">
 				<h4 class="text-light pr-3">Department</h4>
 				<select>
 					<option>CSE</option>
@@ -21,7 +21,7 @@
 
 				</select>
 			</div>
-			<div class="year d-flex p-5">
+			<div class="year d-flex p-2  pt-5 pb-5">
 				<h4 class="text-light pr-3">Year</h4>
 				<select>
 					<option>First</option>
@@ -30,12 +30,16 @@
 					<option>Fourth</option>
 				</select>
 			</div>
-			<div class="sem d-flex p-5">
+			<div class="sem d-flex p-2 pt-5 pb-5">
 				<h4 class="text-light pr-3">Semester</h4>
 				<select>
 					<option>Odd</option>
 					<option>Even</option>
 				</select>
+			</div>
+			<div class="date d-flex p-2 pt-5 pb-5"> 
+				<h4 class="text-light pr-3">Choose Date</h4>
+				<input type="date">
 			</div>
 		</div>
 		<div class="content">
@@ -54,40 +58,42 @@
 				<tbody>
 					<tr>
 						<td>Me</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="checkbox" checked onchange="checking(this)">Presented <textarea id="msg" style="display:none"></textarea> </td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab
+							<!--<div class="opt" style="display:none;"><select><option>Ab</option><<option>Od</option></select></div>-->
+						</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><div class="checking"><input type="checkbox" checked onchange="checking(this)">Presented <textarea id="msg" style="display:none"></textarea> </div></td>
 
 					</tr>
 					<tr>
 						<td>Me</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="checkbox" checked onchange="checking(this)">Presented <textarea id="msg" style="display:none"></textarea> </td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><div class="checking"><input type="checkbox" checked onchange="checking(this)">Presented <textarea id="msg" style="display:none"></textarea> </div></td>
 
 					</tr><tr>
 						<td>Me</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="radio" class="text-primary" checked> &#x2713;<input type="radio" > &#10060;</td>
-						<td><input type="checkbox" checked onchange="checking(this)">Presented <textarea id="msg" style="display:none"></textarea> </td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
+						<td><div class="checking"><input type="checkbox" checked onchange="checking(this)">Presented <textarea id="msg" style="display:none"></textarea></div> </td>
 
 					</tr>
 				</tbody>
@@ -105,8 +111,6 @@ const tds = row.querySelectorAll('td');
 	tds.forEach((td,indextd)=>{
   		const name = `p${index}${indextd}`;
 
-	
-
   const radioButtons = td.querySelectorAll('input[type="radio"]');
 
   radioButtons.forEach(radioButton => {
@@ -114,16 +118,58 @@ const tds = row.querySelectorAll('td');
 	});	
   });
 });
+var abs = document.querySelectorAll('.abs');
 
-	function checking(that){
-		var textarea = document.getElementById("msg")
-		if(!that.checked){
-			textarea.style.display="block";
-		}
-		else{
-			textarea.style.display="none";
+abs.forEach((ab)=>{
+    ab.addEventListener('dblclick',()=>{
+    	if(ab.nextSibling.data == ' ab')
+    	ab.nextSibling.data = ' Od'
+    	else
+    		ab.nextSibling.data = ' ab'
 
-		}
-	}
+
+})
+})
+function checking(that){
+	console.log(that.parentNode.parentNode.parentNode)
+	var checks= document.querySelectorAll(".checking");
+	checks.forEach((check)=>{
+			var box = check.querySelector("input[type=checkbox]");
+			var msg = check.querySelector("textarea");
+			if(!box.checked){
+				msg.style.display = 'block';
+				let abs = that.parentNode.parentNode.parentNode.querySelectorAll('.abs');
+				let pres = that.parentNode.parentNode.parentNode.querySelectorAll('.pre');
+				
+
+				abs.forEach((ab)=>{
+					ab.removeAttribute("checked","checked")
+				})
+				pres.forEach((pre)=>{
+					pre.setAttribute("checked","checked"); 
+				})
+				console.log(abs)
+				console.log(pres)
+				
+			}
+			else{
+		msg.style.display = 'none';
+				
+	let abs = that.parentNode.parentNode.parentNode.querySelectorAll('.abs');
+	let pres = that.parentNode.parentNode.parentNode.querySelectorAll('.pre');
+				pres.forEach((pre)=>{
+					pre.removeAttribute("checked","checked"); 
+				})
+				abs.forEach((ab)=>{
+					ab.setAttribute("checked","checked")
+				})
+			
+			}
+	})
+}
+
+
+
+
 </script>
 </html>
