@@ -5,10 +5,51 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Attendance</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style>
+		html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+#context-menu {
+  position: fixed;
+  z-index: 10000;
+  width: 150px;
+  background: #1b1a1a;
+  border-radius: 5px;
+}
+
+#context-menu .item {
+  padding: 8px 10px;
+  font-size: 15px;
+  color: #eee;
+  cursor: pointer;
+  border-radius: inherit;
+}
+#context-menu .item:hover {
+	background: #343434;
+}
+#context-menu {
+  position: fixed;
+  z-index: 10000;
+  width: 150px;
+  background: #1b1a1a;
+  border-radius: 5px;
+  display: none;
+}
+
+#context-menu.visible{
+	display: block;
+}
+</style>
 
 </head>
 <body class="bg-dark">
-	<div class="container">
+	<div class="container ml-0 mr-0">
 		<div class="nav d-flex">
 			<div class="dept d-flex p-2 pt-5 pb-5">
 				<h4 class="text-light pr-3">Department</h4>
@@ -42,8 +83,12 @@
 				<input type="date">
 			</div>
 		</div>
-		<div class="content">
-			<table class="table bg-light">
+		<div class="content ml-0">
+			<div id="context-menu">
+      	<div class="item" >Ab</div>
+      	<div class="item" >Od</div>
+   	 	</div>
+			<table class="table bg-light rounded" style="max-width: 120%; width: 120%;" >
 				<thead>
 					<th>Name</th>
 					<th>Period 1</th>
@@ -54,54 +99,314 @@
 					<th>Period 6</th>
 					<th>Period 7</th>
 					<th>Period 8</th>
+					<th>Present/Abs/Od</th>
 				</thead>
 				<tbody>
 					<tr>
 						<td>Me</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab
-							<!--<div class="opt" style="display:none;"><select><option>Ab</option><<option>Od</option></select></div>-->
+							<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td class="d-flex">
+							<div class="prechecking pr-2"><input type="radio" class="pao" checked onchange="prechecking(this)">Pre 
+							</div>
+							<div class="abscheck pr-2"><input type="radio" class="pao" onchange="abschecking(this)">Abs 
+							</div>
+							<div class="odcheck pr-2"><input type="radio" class="pao" onchange="odchecking(this)">Od
+							</div>
+								<textarea style="display:none" placeholder="Reason"></textarea> 
+							
 						</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><div class="checking"><input type="checkbox" checked onchange="checking(this)">Presented <textarea id="msg" style="display:none"></textarea> </div></td>
 
 					</tr>
-					<tr>
+					
+						<tr>
 						<td>Me</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><div class="checking"><input type="checkbox" checked onchange="checking(this)">Presented <textarea id="msg" style="display:none"></textarea> </div></td>
-
-					</tr><tr>
-						<td>Me</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><input type="radio" class="pre text-primary" checked> &#x2713;<input type="radio" class="abs"> ab</td>
-						<td><div class="checking"><input type="checkbox" checked onchange="checking(this)">Presented <textarea id="msg" style="display:none"></textarea></div> </td>
+							<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td class="d-flex">
+							<div class="prechecking pr-2"><input type="radio" class="pao" checked onchange="prechecking(this)">Pre 
+							</div>
+							<div class="abscheck pr-2"><input type="radio" class="pao" onchange="abschecking(this)">Abs 
+							</div>
+							<div class="odcheck pr-2"><input type="radio" class="pao" onchange="odchecking(this)">Od
+							</div>
+								<textarea style="display:none" placeholder="Reason"></textarea> 
+							
+						</td>
 
 					</tr>
+						<tr>
+						<td>Me</td>
+							<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td >
+								<div class="d-flex">
+								<div>
+									<input type="radio" class="pre text-primary" checked> &#x2713;
+								</div>
+								<div   ><input class="abs" type="radio" > ab
+								</div>
+							</div>
+							</td>
+						<td class="d-flex">
+							<div class="prechecking pr-2"><input type="radio" class="pao" checked onchange="prechecking(this)">Pre 
+							</div>
+							<div class="abscheck pr-2"><input type="radio" class="pao" onchange="abschecking(this)">Abs 
+							</div>
+							<div class="odcheck pr-2"><input type="radio" class="pao" onchange="odchecking(this)">Od
+							</div>
+								<textarea style="display:none" placeholder="Reason"></textarea> 
+
+						</td>
+
+					</tr>
+					
 				</tbody>
 			</table>
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
+
+// right click event 
+
+const contextMenu = document.getElementById("context-menu");
+const scopes = document.querySelectorAll(".abs");
+
+scopes.forEach((scope)=>{
+	scope.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+ 	var currentTarget = event.currentTarget;
+
+  const { clientX: mouseX, clientY: mouseY } = event;
+
+  contextMenu.style.top = `${mouseY}px`;
+  contextMenu.style.left = `${mouseX}px`;
+
+  contextMenu.classList.add("visible");
+
+  	var items = document.querySelectorAll(".item");
+   	items[0].addEventListener('click',()=>{
+  		currentTarget.checked = true;
+  		currentTarget.nextSibling.data = ' ab'
+  	})
+  	items[1].addEventListener('click',()=>{
+  		currentTarget.checked = true;
+  		currentTarget.nextSibling.data = ' Od'
+  	})
+  	
+  	var body = document.querySelector("body");
+  	body.addEventListener('click',()=>{
+  	contextMenu.classList.remove("visible");
+
+  	});
+});
+})
+
+// Give name for all present Absent radio buttons  
+
+
 const table = document.querySelector('table');
 
 const rows = table.querySelectorAll('tr');
@@ -118,55 +423,61 @@ const tds = row.querySelectorAll('td');
 	});	
   });
 });
-var abs = document.querySelectorAll('.abs');
 
-abs.forEach((ab)=>{
-    ab.addEventListener('dblclick',()=>{
-    	if(ab.nextSibling.data == ' ab')
-    	ab.nextSibling.data = ' Od'
-    	else
-    		ab.nextSibling.data = ' ab'
+// presentchecking
 
-
-})
-})
-function checking(that){
-	console.log(that.parentNode.parentNode.parentNode)
-	var checks= document.querySelectorAll(".checking");
-	checks.forEach((check)=>{
-			var box = check.querySelector("input[type=checkbox]");
-			var msg = check.querySelector("textarea");
-			if(!box.checked){
-				msg.style.display = 'block';
-				let abs = that.parentNode.parentNode.parentNode.querySelectorAll('.abs');
-				let pres = that.parentNode.parentNode.parentNode.querySelectorAll('.pre');
-				
-
-				abs.forEach((ab)=>{
-					ab.removeAttribute("checked","checked")
-				})
-				pres.forEach((pre)=>{
-					pre.setAttribute("checked","checked"); 
-				})
-				console.log(abs)
-				console.log(pres)
-				
-			}
-			else{
-		msg.style.display = 'none';
-				
-	let abs = that.parentNode.parentNode.parentNode.querySelectorAll('.abs');
-	let pres = that.parentNode.parentNode.parentNode.querySelectorAll('.pre');
-				pres.forEach((pre)=>{
-					pre.removeAttribute("checked","checked"); 
-				})
-				abs.forEach((ab)=>{
-					ab.setAttribute("checked","checked")
-				})
-			
-			}
-	})
+function prechecking(that){
+	if(that.checked){
+		var abs = that.parentNode.parentNode.parentNode.querySelectorAll('.abs');
+		var pres= that.parentNode.parentNode.parentNode.querySelectorAll('.pre');
+		var textarea = that.parentNode.parentNode.querySelector("textarea");
+		pres.forEach((pre)=>{
+				pre.setAttribute("checked","checked"); 
+			})
+		abs.forEach((ab)=>{
+				ab.removeAttribute("checked","checked")
+			})	
+		textarea.style.display = "none"			
+	}
+	
 }
+// Absentchecking
+function abschecking(that){
+	if(that.checked){
+		var abs = that.parentNode.parentNode.parentNode.querySelectorAll('.abs');
+		var pres= that.parentNode.parentNode.parentNode.querySelectorAll('.pre');
+		var textarea = that.parentNode.parentNode.querySelector("textarea");
+		textarea.style.display = "block";
+		abs.forEach((ab)=>{
+				ab.nextSibling.data = ' ab'
+				ab.setAttribute("checked","checked")
+			})
+		pres.forEach((pre)=>{
+				pre.removeAttribute("checked","checked"); 
+			})
+				
+	}
+}
+// ODchecking
+function odchecking(that){
+	if(that.checked){
+		var textarea = that.parentNode.parentNode.querySelector("textarea");
+		textarea.style.display = "block";
+		var abs = that.parentNode.parentNode.parentNode.querySelectorAll('.abs');
+		abs.forEach((ab)=>{
+			ab.nextSibling.data = ' Od'
+		})
+	}
+}
+
+// checking present and absent and od and give the class name
+
+rows.forEach((row,i)=>{
+	var pao = row.querySelectorAll(".pao");
+	let name = `pao${i}`
+	pao.name = name;
+
+})
 
 
 
