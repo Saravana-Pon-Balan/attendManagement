@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 JAZZMIN_SETTINGS = {
     "show_ui_builder": True,
     "site_header": "TEC",
+    "copyright": "TEC",
 
 }
 MIDDLEWARE = [

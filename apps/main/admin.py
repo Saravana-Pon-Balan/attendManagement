@@ -32,13 +32,13 @@ class SubjectAdmin(admin.ModelAdmin):
 
 class TimeTableAdmin(admin.ModelAdmin):
     change_list_template = 'admin/timetable_change_list.html'
-
     def changelist_view(self, request, extra_context=None):
         extra_context = extra_context or {}
         values = False
         if request.method == 'POST':
             dept = request.POST.get('department')
             year = request.POST.get('year')
+            date = request.POST.get('date')
             values = True
             if dept == 'CSE':
                 dept = 'Computer Science and Engineering'
@@ -51,7 +51,7 @@ class TimeTableAdmin(admin.ModelAdmin):
             elif dept == 'Civil':
                 dept = 'Civil Engineering'
             timetable_data = TimeTable.objects.filter(
-                period_1__department=dept, period_1__year=year)
+                period_1__department=dept, period_1__year=year,date=date)
             sub = Subject.objects.filter(department=dept, year=year)
             extra_context.update({
                 'timetable': timetable_data,
@@ -75,8 +75,6 @@ class StudentAttendanceAdmin(admin.ModelAdmin):
             dept = request.POST.get('department')
             year = request.POST.get('year')
             date = request.POST.get('date')
-            print(dept, year, date)
-
             values = True
             if dept == 'CSE':
                 dept = 'Computer Science and Engineering'
@@ -91,11 +89,22 @@ class StudentAttendanceAdmin(admin.ModelAdmin):
 
             sub = Subject.objects.filter(department=dept, year=year)
             student = Student.objects.filter(Department=dept, year=year)
-            tt = TimeTable.objects.filter(department=dept, year=year)
+            tt = TimeTable.objects.filter(department=dept, year=year,date=date)
+            subname = []
+            for i in tt:
+                subname.append(i.period_1.subject_name)
+                subname.append(i.period_2.subject_name)
+                subname.append(i.period_3.subject_name)
+                subname.append(i.period_4.subject_name)
+                subname.append(i.period_5.subject_name)
+                subname.append(i.period_6.subject_name)
+                subname.append(i.period_7.subject_name)
+                subname.append(i.period_8.subject_name)
             extra_context.update({
                 "sub": sub,
                 "student": student,
-                'values': values
+                'values': values,
+                'subname':subname
             })
 
             return self.changeform_view(request, None, form_url, extra_context)

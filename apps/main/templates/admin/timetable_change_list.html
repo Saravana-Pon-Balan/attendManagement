@@ -1,7 +1,7 @@
 {% extends "admin/change_list.html" %}
 
 {% block content_title %}
-<h1> Time Table </h1>
+<h3> Time Table </h3>
 {% endblock %}
 
 {% block result_list %}
@@ -13,7 +13,7 @@
                 <label class="my-label pr-3" for="department">
                     <h5>Department</h5>
                 </label>
-                <select class="form-select rounded " name="department" id="department">
+                <select class="form-control bg-dark rounded border-0" name="department" id="department">
                     <option>CSE</option>
                     <option>ECE</option>
                     <option>EEE</option>
@@ -25,12 +25,18 @@
                 <label class="my-label pr-3" for="year">
                     <h5>Year</h5>
                 </label>
-                <select class="form-select rounded " name="year" id="year">
+                <select class="form-control bg-dark rounded border-0" name="year" id="year">
                     <option>First</option>
                     <option>Second</option>
                     <option>Third</option>
                     <option>Fourth</option>
                 </select>
+            </div>
+            <div class="form-group d-flex pl-5 pr-5 mt-3 border-right border-3 border-secondary">
+                <label class="my-label pr-3" for="year">
+                    <h5>Date</h5>
+                </label>
+                <input type="date" name="date" id="date"class="form-control bg-dark rounded border-0">
             </div>
             <div class="pl-5 pr-5 mt-3">
                 <button class="btn btn-primary btn-sm p-2" type="submit">Get Timetable</button>
@@ -90,7 +96,7 @@
                 <tbody>
                     {% for i in sub %}
                     <tr>
-                        <td>{{i.name}}</td>
+                        <td>{{i.subject_name}}</td>
                         <td>{{i.staff.name}}</td>
                         <td>AP/CSE</td>
                     </tr>
@@ -105,7 +111,10 @@
     {% endif %}
 </div>
 </body>
-
+<script>
+    let today = new Date().toISOString().substr(0, 10);
+    document.getElementById("date").value = today;
+</script>
 {% endblock %}
 
 {% block pagination %}{% endblock %}

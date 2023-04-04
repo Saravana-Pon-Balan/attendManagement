@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 year_choices = [
     ('First', 'First'),
     ('Second', 'Second'),
@@ -229,6 +230,7 @@ class TimeTable(models.Model):
         choices=dept_choices, max_length=100, null=True, default='CSE')
     year = models.CharField(max_length=100, null=True, choices=year_choices)
     semester = models.CharField(max_length=20, null=True, choices=sem_choices)
+    date = models.DateField(default=datetime.datetime.now)
     period_1 = models.ForeignKey(
         Subject, on_delete=models.CASCADE, related_name='period_1', null=True)
     period_2 = models.ForeignKey(
@@ -261,16 +263,24 @@ class StudentAttendance(models.Model):
     name = models.ForeignKey(Student, on_delete=models.CASCADE)
     date = models.DateField()
     period_1 = models.CharField(max_length=100, choices=att_choice, null=True)
+    p1reason = models.CharField(max_length=500, null=True, blank=True)
     period_2 = models.CharField(max_length=100, choices=att_choice, null=True)
+    p2reason = models.CharField(max_length=500, null=True, blank=True)
     period_3 = models.CharField(max_length=100, choices=att_choice, null=True)
+    p3reason = models.CharField(max_length=500, null=True, blank=True)
     period_4 = models.CharField(max_length=100, choices=att_choice, null=True)
+    p4reason = models.CharField(max_length=500, null=True, blank=True)
     period_5 = models.CharField(max_length=100, choices=att_choice, null=True)
+    p5reason = models.CharField(max_length=500, null=True, blank=True)
     period_6 = models.CharField(max_length=100, choices=att_choice, null=True)
+    p6reason = models.CharField(max_length=500, null=True, blank=True)
     period_7 = models.CharField(max_length=100, choices=att_choice, null=True)
+    p7reason = models.CharField(max_length=500, null=True, blank=True)
     period_8 = models.CharField(max_length=100, choices=att_choice, null=True)
+    p8reason = models.CharField(max_length=500, null=True, blank=True)
     reason = models.CharField(max_length=500, null=True, blank=True)
     mark_attendance = models.CharField(
         max_length=100, choices=att_choice, blank=True, null=True)
 
     def __str__(self):
-        return self.name
+        return str(self.name)

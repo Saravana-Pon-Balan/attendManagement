@@ -62,6 +62,9 @@
     #context-menu.visible {
         display: block;
     }
+    .reas{
+        display:none;
+    }
 </style>
 
 <div class="container ml-0 mr-0">
@@ -88,18 +91,19 @@
                     <option>Fourth</option>
                 </select>
             </div>
+            <div class="year d-flex p-2  pt-5 pb-5">
+                <h4 class=" pr-3">Date</h4>
+                <input type="date" id="date" name="date">
+            </div>
 
             <div class="date d-flex p-2 pt-5 pb-5">
-                <button type="submit" class="btn btn-danger">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
     </div>
 
     <div class="content ml-0">
-        <div class="date d-flex p-2 pt-5 pb-5">
-            <h4 class=" pr-3">Choose Date</h4>
-            <input id="date" type="date" name="date">
-        </div>
+        
         <div class="content ml-0">
             <div id="context-menu">
                 <div class="item">Ab</div>
@@ -108,14 +112,9 @@
             <table class="table bg-light rounded w-auto">
                 <thead>
                     <th>Name</th>
-                    <th>Period 1</th>
-                    <th>Period 2</th>
-                    <th>Period 3</th>
-                    <th>Period 4</th>
-                    <th>Period 5</th>
-                    <th>Period 6</th>
-                    <th>Period 7</th>
-                    <th>Period 8</th>
+                    {% for i in subname %}
+                    <th>{{i}}</th>
+                    {% endfor %}
                     <th>Present/Abs/Od</th>
                 </thead>
                 <tbody>
@@ -125,75 +124,95 @@
                         <td>
                             <div class="d-flex">
                                 <div>
-                                    <input type="radio" class="pre text-primary" checked> &#x2713;
+                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
                                 </div>
                                 <div>
-                                    <input class="abs" type="radio"> ab
+                                    <input class="abs" type="radio" onclick="sabs(this)"> ab
+                                    <input type="text" placeholder="Reason" class="reas">
+
+                                </div>                                
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex">
+                                <div>
+                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
+                                </div>
+                                <div>
+                                    <input class="abs" type="radio" onclick="sabs(this)"> ab
+                                    <input type="text" placeholder="Reason" class="reas">
+                                </div>
+                                
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex">
+                                <div>
+                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
+                                </div>
+                                <div>
+                                    <input class="abs" type="radio" onclick="sabs(this)"> ab
+                                    <input type="text" placeholder="Reason" class="reas">
+                                </div>
+                                
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex">
+                                <div>
+                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
+                                </div>
+                                <div>
+                                    <input class="abs" type="radio" onclick="sabs(this)"> ab
+                                    <input type="text" placeholder="Reason" class="reas">
+                                </div>
+                                
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex">
+                                <div>
+                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
+                                </div>
+                                <div>
+                                    <input class="abs" type="radio" onclick="sabs(this)"> ab
+                                    <input type="text" placeholder="Reason" class="reas">
+                                </div>
+                                
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex">
+                                <div>
+                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
+                                </div>
+                                <div>
+                                    <input class="abs" type="radio" onclick="sabs(this)"> ab
+                                    <input type="text" placeholder="Reason" class="reas">
+                                </div>
+                               
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex">
+                                <div>
+                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
+                                </div>
+                                <div>
+                                    <input class="abs" type="radio"  onclick="sabs(this)"> ab
+                                    <input type="text" placeholder="Reason" class="reas">
+
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="d-flex">
                                 <div>
-                                    <input type="radio" class="pre text-primary" checked> &#x2713;
+                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
                                 </div>
                                 <div>
-                                    <input class="abs" type="radio"> ab
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex">
-                                <div>
-                                    <input type="radio" class="pre text-primary" checked> &#x2713;
-                                </div>
-                                <div><input class="abs" type="radio"> ab
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex">
-                                <div>
-                                    <input type="radio" class="pre text-primary" checked> &#x2713;
-                                </div>
-                                <div>
-                                    <input class="abs" type="radio"> ab
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex">
-                                <div>
-                                    <input type="radio" class="pre text-primary" checked> &#x2713;
-                                </div>
-                                <div><input class="abs" type="radio"> ab
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex">
-                                <div>
-                                    <input type="radio" class="pre text-primary" checked> &#x2713;
-                                </div>
-                                <div><input class="abs" type="radio"> ab
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex">
-                                <div>
-                                    <input type="radio" class="pre text-primary" checked> &#x2713;
-                                </div>
-                                <div><input class="abs" type="radio"> ab
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex">
-                                <div>
-                                    <input type="radio" class="pre text-primary" checked> &#x2713;
-                                </div>
-                                <div><input class="abs" type="radio"> ab
+                                    <input class="abs" type="radio" onclick="sabs(this)"> ab
+                                    <input type="text" placeholder="Reason" class="reas">
                                 </div>
                             </div>
                         </td>
@@ -225,15 +244,25 @@
     <script type="text/javascript">
         let today = new Date().toISOString().substr(0, 10);
         document.getElementById("date").value = today;
+
+        // single present checked
+        function spres(that){
+            that.parentNode.parentNode.lastElementChild.children[1].style.display = "none"
+        }
+        function sabs(that){
+            that.nextSibling.nextSibling.style.display = "block"
+        }
+
+
         // right click event 
 
         const contextMenu = document.getElementById("context-menu");
         const scopes = document.querySelectorAll(".abs");
-
+        var currentTarget;
         scopes.forEach((scope) => {
             scope.addEventListener("contextmenu", (event) => {
                 event.preventDefault();
-                var currentTarget = event.currentTarget;
+                currentTarget = event.currentTarget;
 
                 const { clientX: mouseX, clientY: mouseY } = event;
 
@@ -242,16 +271,6 @@
 
                 contextMenu.classList.add("visible");
 
-                var items = document.querySelectorAll(".item");
-                items[0].addEventListener('click', () => {
-                    currentTarget.checked = true;
-                    currentTarget.nextSibling.data = ' ab'
-                })
-                items[1].addEventListener('click', () => {
-                    currentTarget.checked = true;
-                    currentTarget.nextSibling.data = ' Od'
-                })
-
                 var body = document.querySelector("body");
                 body.addEventListener('click', () => {
                     contextMenu.classList.remove("visible");
@@ -259,7 +278,17 @@
                 });
             });
         })
-
+        var items = document.querySelectorAll(".item");
+                items[0].addEventListener('click', () => {
+                    currentTarget.checked = true;
+                    currentTarget.nextSibling.data = ' ab'
+                    currentTarget.nextSibling.nextSibling.style.display="block"
+                })
+                items[1].addEventListener('click', () => {
+                    currentTarget.checked = true;
+                    currentTarget.nextSibling.data = ' Od'
+                    currentTarget.nextSibling.nextSibling.style.display="block"
+                })
         // Give name for all present Absent radio buttons  
 
 
@@ -358,19 +387,22 @@
                 pre.forEach((j, index) => {
                     if (j.checked) {
                         drow[ind][`period_${index + 1}`] = 'Present'
+                        drow[ind][`p${index+1}reason`] = ""
+
                     }
                 })
                 abs.forEach((j, index) => {
 
                     if (j.checked) {
-                        // console.log(j.nextSibling.innerText.includes('ab'));
                         var text = j.nextSibling.data
                         if (text.includes('ab')) {
                             console.log("We won Saravana!")
                             drow[ind][`period_${index + 1}`] = 'Absent'
+                            drow[ind][`p${index+1}reason`] = j.nextSibling.nextSibling?.value || ""
                         }
                         else if (text.includes('Od')) {
                             drow[ind][`period_${index + 1}`] = 'On Duty'
+                            drow[ind][`p${index+1}reason`] = j.nextSibling.nextSibling?.value || ""
                         }
                     }
 
