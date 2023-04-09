@@ -10,12 +10,12 @@ def frontpage(request):
 
 def submitAttend(request):
     data = json.loads(request.body)
-    date = str(data[-1])
     for i in data:
         try:
             print(i)
             name = i["name"]
             stu = Student.objects.get(name=name)
+            date = str(data[-1])
             StudentAttendance.objects.create(name=stu, date=date,
                                             period_1=i['period_1'],p1reason=i['p1reason'],
                                             period_2=i['period_2'],p2reason=i['p2reason'],
@@ -28,5 +28,4 @@ def submitAttend(request):
                                              reason=i['Reason'])
         except:
             pass
-        
     return JsonResponse({'Success': True})

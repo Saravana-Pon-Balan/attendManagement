@@ -26,6 +26,7 @@
     body {
         width: 100%;
         height: 100%;
+        font-family: "Open Sans", sans-serif;
         padding: 0;
         margin: 0;
     }
@@ -95,15 +96,14 @@
                 <h4 class=" pr-3">Date</h4>
                 <input type="date" id="date" name="date">
             </div>
-
             <div class="date d-flex p-2 pt-5 pb-5">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" id="fsub" class="btn btn-primary" 
+                onclick="">Submit</button>
             </div>
         </form>
     </div>
-
+{% if values %}
     <div class="content ml-0">
-        
         <div class="content ml-0">
             <div id="context-menu">
                 <div class="item">Ab</div>
@@ -124,101 +124,89 @@
                         <td>
                             <div class="d-flex">
                                 <div>
-                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
+                                    <input type="radio" class="pre text-primary"  onclick="spres(this)" checked> &#x2713;
                                 </div>
                                 <div>
                                     <input class="abs" type="radio" onclick="sabs(this)"> ab
                                     <input type="text" placeholder="Reason" class="reas">
-
-                                </div>                                
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex">
-                                <div>
-                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
-                                </div>
-                                <div>
-                                    <input class="abs" type="radio" onclick="sabs(this)"> ab
-                                    <input type="text" placeholder="Reason" class="reas">
-                                </div>
-                                
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex">
-                                <div>
-                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
-                                </div>
-                                <div>
-                                    <input class="abs" type="radio" onclick="sabs(this)"> ab
-                                    <input type="text" placeholder="Reason" class="reas">
-                                </div>
-                                
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex">
-                                <div>
-                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
-                                </div>
-                                <div>
-                                    <input class="abs" type="radio" onclick="sabs(this)"> ab
-                                    <input type="text" placeholder="Reason" class="reas">
-                                </div>
-                                
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex">
-                                <div>
-                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
-                                </div>
-                                <div>
-                                    <input class="abs" type="radio" onclick="sabs(this)"> ab
-                                    <input type="text" placeholder="Reason" class="reas">
-                                </div>
-                                
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex">
-                                <div>
-                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
-                                </div>
-                                <div>
-                                    <input class="abs" type="radio" onclick="sabs(this)"> ab
-                                    <input type="text" placeholder="Reason" class="reas">
-                                </div>
-                               
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex">
-                                <div>
-                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
-                                </div>
-                                <div>
-                                    <input class="abs" type="radio"  onclick="sabs(this)"> ab
-                                    <input type="text" placeholder="Reason" class="reas">
-
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="d-flex">
                                 <div>
-                                    <input type="radio" class="pre text-primary" onclick="spres(this)" checked> &#x2713;
+                                    <input type="radio" class="pre text-primary"  onclick="spres(this)" checked> &#x2713;
                                 </div>
                                 <div>
                                     <input class="abs" type="radio" onclick="sabs(this)"> ab
+                                    <input type="text" placeholder="Reason" class="reas">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex">
+                                <div>
+                                    <input type="radio" class="pre text-primary"  onclick="spres(this)" checked> &#x2713;
+                                </div>
+                                <div><input class="abs" type="radio" onclick="sabs(this)"> ab
+                                    <input type="text" placeholder="Reason" class="reas">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex">
+                                <div>
+                                    <input type="radio" class="pre text-primary"  onclick="spres(this)" checked> &#x2713;
+                                </div>
+                                <div>
+                                    <input class="abs" type="radio" onclick="sabs(this)"> ab
+                                    <input type="text" placeholder="Reason" class="reas">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex">
+                                <div>
+                                    <input type="radio" class="pre text-primary"  onclick="spres(this)" checked> &#x2713;
+                                </div>
+                                <div><input class="abs" type="radio" onclick="sabs(this)"> ab
+                                    <input type="text" placeholder="Reason" class="reas">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex">
+                                <div>
+                                    <input type="radio" class="pre text-primary"  onclick="spres(this)" checked> &#x2713;
+                                </div>
+                                <div><input class="abs" type="radio" onclick="sabs(this)"> ab
+                                    <input type="text" placeholder="Reason" class="reas">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex">
+                                <div>
+                                    <input type="radio" class="pre text-primary"  onclick="spres(this)" checked> &#x2713;
+                                </div>
+                                <div><input class="abs" type="radio" onclick="sabs(this)"> ab
+                                    <input type="text" placeholder="Reason" class="reas">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex">
+                                <div>
+                                    <input type="radio" class="pre text-primary"  onclick="spres(this)" checked> &#x2713;
+                                </div>
+                                <div><input class="abs" type="radio"onclick="sabs(this)"> ab
                                     <input type="text" placeholder="Reason" class="reas">
                                 </div>
                             </div>
                         </td>
                         <td class="d-flex">
                             <div class="prechecking pr-2">
-                                <input type="radio" class="pao" checked onchange="prechecking(this)">Pre
+                                <input type="radio" class="pao"  checked onchange="prechecking(this)">Pre
                             </div>
                             <div class="abscheck pr-2">
                                 <input type="radio" class="pao" onchange="abschecking(this)">Abs
@@ -239,21 +227,32 @@
         <div class="ml-5">
             <button class="btn btn-primary" onclick="attSubmit(event)">Save</button>
         </div>
+        {% else %}
+        <h4>Please Fill input Field</h4>
+        {% endif %}
     </div>
     </body>
     <script type="text/javascript">
+       /* var fsub = document.getElementById('fsub')
+        fsub.addEventListener('click',()=>{
+            console.log('clicked');
+           
+        })*/
         let today = new Date().toISOString().substr(0, 10);
         document.getElementById("date").value = today;
+        setTimeout(() => {
+            var err = document.querySelector('.alert')
+            err.style.display = 'none'
+        }, -1000);
 
-        // single present checked
-        function spres(that){
+         // single present checked
+         function spres(that){
             that.parentNode.parentNode.lastElementChild.children[1].style.display = "none"
         }
         function sabs(that){
             that.nextSibling.nextSibling.style.display = "block"
         }
-
-
+       
         // right click event 
 
         const contextMenu = document.getElementById("context-menu");
@@ -376,7 +375,6 @@
             url = "/api/attendSubmit"
             var trow = document.querySelectorAll('.trow')
             var date = document.getElementById('date').value
-            if (date){ 
             var drow = []
             trow.forEach((i, ind) => {
                 var name = i.querySelector(".stuName")
@@ -388,12 +386,12 @@
                     if (j.checked) {
                         drow[ind][`period_${index + 1}`] = 'Present'
                         drow[ind][`p${index+1}reason`] = ""
-
                     }
                 })
                 abs.forEach((j, index) => {
 
                     if (j.checked) {
+                        // console.log(j.nextSibling.innerText.includes('ab'));
                         var text = j.nextSibling.data
                         if (text.includes('ab')) {
                             console.log("We won Saravana!")
@@ -435,11 +433,7 @@
                 .catch(function (error) {
                     console.log(error)
                 })
-            }
-            else{
-                alert("Enter the Date Field")
-            }
-            }
+        }
 
     </script>
 

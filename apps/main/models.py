@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+
 year_choices = [
     ('First', 'First'),
     ('Second', 'Second'),
@@ -118,48 +119,48 @@ Emergency_choice = [
 
 
 class Staff(models.Model):
-    Employee_ID = models.CharField(max_length=5, null=True)
+    Employee_ID = models.CharField(max_length=5, null=True,blank=True)
     Employee_Category = models.CharField(
-        max_length=30, choices=employee_choice, null=True)
+        max_length=30, choices=employee_choice, null=True,blank=True)
     name = models.CharField(max_length=200)
     role = models.CharField(max_length=200, null=True)
-    Father_name = models.CharField(max_length=50, null=True)
-    Mother_name = models.CharField(max_length=50, null=True)
+    Father_name = models.CharField(max_length=50, null=True,blank=True)
+    Mother_name = models.CharField(max_length=50, null=True,blank=True)
     phone = models.IntegerField(null=True)
-    email = models.CharField(max_length=200)
-    Home_contact_No = models.IntegerField(null=True)
+    email = models.CharField(max_length=200,blank=True)
+    Home_contact_No = models.IntegerField(null=True,blank=True)
     Age = models.IntegerField(null=True)
     Gender = models.CharField(max_length=10, choices=gender_choices, null=True)
-    Blood_group = models.CharField(max_length=10, null=True)
-    Aadhaar_no = models.IntegerField(null=True)
-    DOB = models.DateField(null=True)
-    Date_of_Joining = models.DateField(null=True)
+    Blood_group = models.CharField(max_length=10, null=True,blank=True)
+    Aadhaar_no = models.IntegerField(null=True,blank=True)
+    DOB = models.DateField(null=True,blank=True)
+    Date_of_Joining = models.DateField(null=True,blank=True)
     Marital_Status = models.CharField(
-        max_length=10, choices=marital_choice, null=True)
-    Spouse_Name = models.CharField(max_length=30, null=True)
-    Children_count = models.IntegerField(null=True)
+        max_length=10, choices=marital_choice, null=True,blank=True)
+    Spouse_Name = models.CharField(max_length=30, null=True,blank=True)
+    Children_count = models.IntegerField(null=True,blank=True)
     Department = models.CharField(max_length=200, choices=dept_choices)
-    Qualification = models.CharField(max_length=50, null=True)
-    Experience = models.CharField(max_length=50, null=True)
-    Religion = models.CharField(max_length=30, null=True)
+    Qualification = models.CharField(max_length=50, null=True,blank=True)
+    Experience = models.CharField(max_length=50, null=True,blank=True)
+    Religion = models.CharField(max_length=30, null=True,blank=True)
     Community = models.CharField(
-        max_length=10, choices=category_choices, null=True)
-    Door_no = models.IntegerField(null=True)
-    Street_and_Area = models.CharField(max_length=200, null=True)
-    District = models.CharField(max_length=50, null=True)
-    State = models.CharField(max_length=50, null=True)
-    Country = models.CharField(max_length=50, null=True)
-    Pincode = models.IntegerField(null=True)
-    Office_Door_no = models.IntegerField(null=True)
-    Office_Street_and_Area = models.CharField(max_length=200, null=True)
-    Office_District = models.CharField(max_length=50, null=True)
-    Office_State = models.CharField(max_length=50, null=True)
-    Office_Country = models.CharField(max_length=50, null=True)
-    Office_Pincode = models.IntegerField(null=True)
+        max_length=10, choices=category_choices, null=True,blank=True)
+    Door_no = models.IntegerField(null=True,blank=True)
+    Street_and_Area = models.CharField(max_length=200, null=True,blank=True)
+    District = models.CharField(max_length=50, null=True,blank=True)
+    State = models.CharField(max_length=50, null=True,blank=True)
+    Country = models.CharField(max_length=50, null=True,blank=True)
+    Pincode = models.IntegerField(null=True,blank=True)
+    Office_Door_no = models.IntegerField(null=True,blank=True)
+    Office_Street_and_Area = models.CharField(max_length=200, null=True,blank=True)
+    Office_District = models.CharField(max_length=50, null=True,blank=True)
+    Office_State = models.CharField(max_length=50, null=True,blank=True)
+    Office_Country = models.CharField(max_length=50, null=True,blank=True)
+    Office_Pincode = models.IntegerField(null=True,blank=True)
     Mode_of_Transpotation = models.CharField(
-        max_length=50, choices=transport_choice, null=True)
+        max_length=50, choices=transport_choice, null=True,blank=True)
     Emergency_contact = models.CharField(
-        max_length=30, choices=Emergency_choice, null=True)
+        max_length=30, choices=Emergency_choice, null=True,blank=True)
 
     def __str__(self):
         return self.name
@@ -247,7 +248,6 @@ class TimeTable(models.Model):
         Subject, on_delete=models.CASCADE, related_name='period_7', null=True)
     period_8 = models.ForeignKey(
         Subject, on_delete=models.CASCADE, related_name='period_8', null=True)
-
     def __str__(self):
         return f'{self.period_1.year} {self.period_1.department} {self.day}'
 

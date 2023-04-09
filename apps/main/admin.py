@@ -112,6 +112,7 @@ class StudentAttendanceAdmin(admin.ModelAdmin):
             return self.changeform_view(request, None, form_url, extra_context)
 
 
+
 admin.site.register(Student, StudentAdmin)
 admin.site.register(Staff, StaffAdmin)
 admin.site.register(Subject, SubjectAdmin)

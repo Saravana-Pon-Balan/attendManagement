@@ -13,7 +13,7 @@
                 <label class="my-label pr-3" for="department">
                     <h5>Department</h5>
                 </label>
-                <select class="form-control bg-dark rounded border-0" name="department" id="department">
+                <select class="form-control bg-dark rounded border-0" name="department" id="department">                    
                     <option>CSE</option>
                     <option>ECE</option>
                     <option>EEE</option>
@@ -98,7 +98,7 @@
                     <tr>
                         <td>{{i.subject_name}}</td>
                         <td>{{i.staff.name}}</td>
-                        <td>AP/CSE</td>
+                        <td>{{i.staff.role}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
