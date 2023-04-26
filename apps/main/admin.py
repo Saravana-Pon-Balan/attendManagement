@@ -75,6 +75,7 @@ class StudentAttendanceAdmin(admin.ModelAdmin):
             dept = request.POST.get('department')
             year = request.POST.get('year')
             date = request.POST.get('date')
+            print(dept,year,date)
             values = True
             if dept == 'CSE':
                 dept = 'Computer Science and Engineering'

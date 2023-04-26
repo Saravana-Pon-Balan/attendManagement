@@ -97,8 +97,7 @@
                 <input type="date" id="date" name="date">
             </div>
             <div class="date d-flex p-2 pt-5 pb-5">
-                <button type="submit" id="fsub" class="btn btn-primary" 
-                onclick="">Submit</button>
+                <button type="submit" id="fsub" class="btn btn-primary" onclick="formsub(event)">Submit</button>
             </div>
         </form>
     </div>
@@ -115,7 +114,7 @@
                     {% for i in subname %}
                     <th>{{i}}</th>
                     {% endfor %}
-                    <th>Present/Abs/Od</th>
+                    <th>Present|Abs|Od</th>
                 </thead>
                 <tbody>
                     {% for i in student %}
@@ -233,11 +232,6 @@
     </div>
     </body>
     <script type="text/javascript">
-       /* var fsub = document.getElementById('fsub')
-        fsub.addEventListener('click',()=>{
-            console.log('clicked');
-           
-        })*/
         let today = new Date().toISOString().substr(0, 10);
         document.getElementById("date").value = today;
         setTimeout(() => {
@@ -245,6 +239,24 @@
             err.style.display = 'none'
         }, -1000);
 
+        // Send Form data 
+
+        function submitForm() {
+            var xhr = new XMLHttpRequest();
+            var formData = new FormData(document.getElementById("studentattendance_form"));
+            xhr.open("POST", window.location.pathname);
+            xhr.send(formData);
+          }
+          
+        function formsub(event){
+            console.log("logg")
+            submitForm();
+
+            event.preventDefault();
+        }
+        
+
+        
          // single present checked
          function spres(that){
             that.parentNode.parentNode.lastElementChild.children[1].style.display = "none"
